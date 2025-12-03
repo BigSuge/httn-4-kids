@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { motion } from 'motion/react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, LogOut } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
 
@@ -228,22 +228,23 @@ export function AdminDashboard({ accessToken, onClose }: AdminDashboardProps) {
   }
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 overflow-y-auto">
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 overflow-y-auto py-4 sm:py-6 md:py-8">
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-4 sm:p-6 md:p-8 lg:p-12 max-w-7xl w-full m-2 sm:m-4 md:m-8"
+        className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-4 sm:p-6 md:p-8 lg:p-12 max-w-7xl w-[calc(100%-1rem)] sm:w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] mx-auto min-h-min"
       >
-        <div className="flex justify-between items-center mb-4 sm:mb-6 md:mb-8">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6 md:mb-8">
           <h1 className="text-red-600 text-xl sm:text-2xl md:text-3xl lg:text-4xl">
             Admin Dashboard
           </h1>
           <button
             onClick={onClose}
-            className="text-gray-500 hover:text-gray-700 text-3xl sm:text-4xl min-w-[44px] min-h-[44px] flex items-center justify-center"
-            aria-label="Close"
+            className="flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl sm:rounded-2xl transition-colors text-sm sm:text-base min-h-[44px]"
+            aria-label="Logout"
           >
-            ×
+            <LogOut size={18} className="sm:w-5 sm:h-5" />
+            <span>Logout</span>
           </button>
         </div>
 
