@@ -238,23 +238,14 @@ export function AdminDashboard({ accessToken, onClose }: AdminDashboardProps) {
           <h1 className="text-red-600 text-xl sm:text-2xl md:text-3xl lg:text-4xl">
             Admin Dashboard
           </h1>
-          <div className="flex items-center gap-2 sm:gap-3">
-            <button
-              onClick={onClose}
-              className="flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl sm:rounded-2xl transition-colors text-sm sm:text-base min-h-[44px]"
-              aria-label="Logout"
-            >
-              <LogOut size={18} className="sm:w-5 sm:h-5" />
-              <span>Logout</span>
-            </button>
-            <button
-              onClick={onClose}
-              className="text-gray-500 hover:text-gray-700 text-3xl sm:text-4xl min-w-[44px] min-h-[44px] flex items-center justify-center"
-              aria-label="Close"
-            >
-              ×
-            </button>
-          </div>
+          <button
+            onClick={onClose}
+            className="flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl sm:rounded-2xl transition-colors text-sm sm:text-base min-h-[44px]"
+            aria-label="Logout"
+          >
+            <LogOut size={18} className="sm:w-5 sm:h-5" />
+            <span>Logout</span>
+          </button>
         </div>
 
         {/* Overview Stats */}
